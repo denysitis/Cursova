@@ -1,0 +1,47 @@
+<?php
+
+/* Назва бази даних для WordPress */
+define( 'DB_NAME', '{{ mysql_db }}' );
+
+/* Ім'я користувача бази даних MySQL */
+define( 'DB_USER', '{{ mysql_user }}' );
+
+/* Пароль бази даних MySQL */
+define( 'DB_PASSWORD', '{{ mysql_password }}' );
+
+/* Ім'я хосту MySQL */
+define( 'DB_HOST', 'localhost' );
+
+/*Кодування бази даних */
+define( 'DB_CHARSET', 'utf8' );
+
+/*Тип зіставлення бази даних */
+define( 'DB_COLLATE', '' );
+
+/* Доступ до файлової системи */
+define('FS_METHOD', 'direct');
+
+/*Унікальні ключі аутентифікації*/
+define( 'AUTH_KEY',         '{{ lookup('password', '/dev/null chars=ascii_letters length=64') }}' );
+define( 'SECURE_AUTH_KEY',  '{{ lookup('password', '/dev/null chars=ascii_letters length=64') }}' );
+define( 'LOGGED_IN_KEY',    '{{ lookup('password', '/dev/null chars=ascii_letters length=64') }}' );
+define( 'NONCE_KEY',        '{{ lookup('password', '/dev/null chars=ascii_letters length=64') }}' );
+define( 'AUTH_SALT',        '{{ lookup('password', '/dev/null chars=ascii_letters length=64') }}' );
+define( 'SECURE_AUTH_SALT', '{{ lookup('password', '/dev/null chars=ascii_letters length=64') }}' );
+define( 'LOGGED_IN_SALT',   '{{ lookup('password', '/dev/null chars=ascii_letters length=64') }}' );
+define( 'NONCE_SALT',       '{{ lookup('password', '/dev/null chars=ascii_letters length=64') }}' );
+
+
+/*Префікс таблиці бази даних WordPress */
+$table_prefix = 'wp_';
+
+/*Режим налагодження WordPress */
+define( 'WP_DEBUG', false );
+
+/*Абсолютний шлях до каталогу WordPress  */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+}
+
+/*Встановлення WordPress і всіх необхідних файлів */
+require_once( ABSPATH . 'wp-settings.php' );

@@ -1,0 +1,14 @@
+---
+#Системні налаштування
+php_modules: [ 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
+
+#MySQL налаштування
+mysql_root_password: "root"
+mysql_db: "denyswordpress"
+mysql_user: "myadmin"
+mysql_password: "159753"
+
+#HTTP налаштування
+http_host: "{{ public_ip_server }}"
+http_conf: "{{ public_ip_server }}.conf"
+http_port: "80"
